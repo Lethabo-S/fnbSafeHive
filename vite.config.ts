@@ -43,7 +43,7 @@ export default defineConfig({
   },
 
   // ✅ Use process.env here (Node environment)
-  base: process.env.VITE_BASE_PATH || '/',
+  base: process.env.VITE_BASE_PATH || '/fnbSafeHive',
 
   optimizeDeps: {
     exclude: ['lucide-react'],
@@ -54,8 +54,8 @@ export default defineConfig({
     sourcemap: true,
   },
 
-  server: {
-    port: 5175,
-    open: true,
-  },
+  // server: {
+  //   port: 5175,
+  //   open: true,
+  // },
 });
