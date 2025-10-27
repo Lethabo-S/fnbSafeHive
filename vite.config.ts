@@ -15,7 +15,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'), // ✅ Optional: cleaner imports like @/components
     },
   },
-  base: process.env.VITE_BASE_PATH || '/', // ✅ Use import.meta.env for frontend-safe access
+  base: import.meta.env.VITE_BASE_PATH || '/', // ✅ Use import.meta.env for frontend-safe access
   optimizeDeps: {
     exclude: ['lucide-react'], // ✅ Prevent pre-bundling issues
   },

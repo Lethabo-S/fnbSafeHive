@@ -3,6 +3,12 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Supabase URL and Anon Key must be defined in environment variables');
+}
+
+
+
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export type Profile = {
@@ -31,5 +37,3 @@ export type SosEvent = {
   status: 'active' | 'resolved' | 'cancelled';
   created_at: string;
 };
-console.log('Supabase URL:', supabaseUrl);
-console.log('Anon Key Exists:', !!supabaseAnonKey);
